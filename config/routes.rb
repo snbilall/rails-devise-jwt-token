@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  post 'session_controller/create'
+  post 'session_controller/authenticate'
 
   get 'session_controller/destroy'
 

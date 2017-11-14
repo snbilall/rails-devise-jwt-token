@@ -1,16 +1,26 @@
 class SessionControllerController < ApplicationController
-  def create
-  	user = User.where(email: params[:email]).first
+	skip_before_action :authenticate_request 
 
-  	if user.valid_password?(params[:password])
-  		user.save
-  		render json: user.as_json(only: [:id, :email, :authentication_token]), status: :created
-  	else
-  		head(:unauthorized)
-  	end
+	def authenticate 
+		command = AuthenticateUser.call(params[:email], params[:password]) 
+		if command.success? 
+			render json: { auth_token: command.result } 
+		else 
+			render json: { error: command.errors }, status: :unauthorized 
+		end 
+	end 
+  # def create
+  # 	user = User.where(email: params[:email]).first
 
-  end
+  # 	if user.valid_password?(params[:password])
+  # 		user.save
+  # 		render json: user.as_json(only: [:id, :email, :authentication_token]), status: :created
+  # 	else
+  # 		head(:unauthorized)
+  # 	end
 
-  def destroy
-  end
+  # end
+
+  # def destroy
+  # end
 end

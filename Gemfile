@@ -15,6 +15,10 @@ gem 'puma', '~> 3.7'
 
 gem 'devise'
 
+gem 'jwt'
+
+gem 'simple_command'
+
 gem 'simple_token_authentication', '~> 1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'

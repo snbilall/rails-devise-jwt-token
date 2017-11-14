@@ -6,3 +6,5 @@ request written above returns user id, email and auth token
 
 devise gemindeki auth token özelliği kaldırıldığı için simple_token gem kullanıldı
 because of devise's auth token ability deprecated, simple_token gem has been used.
+
+Update: simple_comand => jwt
