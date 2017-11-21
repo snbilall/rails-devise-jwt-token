@@ -9,6 +9,8 @@ class SessionControllerController < ApplicationController
 			render json: { error: command.errors }, status: :unauthorized 
 		end 
 	end 
+
+  
   # def create
   # 	user = User.where(email: params[:email]).first
 
