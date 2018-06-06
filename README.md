@@ -32,7 +32,7 @@ add code below to Application method inside 'config/application.rb'
 config.autoload_paths << Rails.root.join('lib')
 
 add gem 'simple_command' and run bundle insall
-
+```
 create app/commands/authenticate_user.rb and paste code below 
 (yukardaki dosyayı oluşturun ve aşağıdaki kodu yapıştırın)
 ```ruby
